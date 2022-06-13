@@ -1,0 +1,11 @@
+.header{
+    grid-area: h;
+    background-image:url(https://previews.123rf.com/images/dmitr1ch/dmitr1ch1802/dmitr1ch180200020/95045441-wide-metal-texture-iron-sheet-background-for-site-caps.jpg);
+    padding: 10px;
+    min-height: 70px;
+    /* background-color: green; */
+    /* margin:10px 0px 10px 0px; */
+  }
+  .header img{
+    width: 70px;
+  }

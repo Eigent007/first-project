@@ -1,0 +1,15 @@
+
+.nav{
+    grid-area: n;
+    background-color: burlywood;
+    padding: 10px;
+    margin: 40px 10px 0px 0px;
+  }
+
+.item a{
+     color: white;
+     text-decoration:none;
+  }
+.item a.activeLink{
+  color:blue;
+}
