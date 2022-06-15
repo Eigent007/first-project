@@ -1,36 +1,35 @@
 import React from "react";
-import s from "./MyPosts.module.css";
-import Post from "./Post/Post";
-import { addPostActionCreator, AddPostTextActionCreator } from "../../../redux/profile-reducer";
+import {
+  addPostActionCreator,
+  AddPostTextActionCreator,
+} from "../../../redux/profile-reducer";
+import MyPosts from "./MyPosts";
 
 const MyPostsContainer = (props) => {
-  let postElements = props.posts.map((postsData) => (
-    <Post
-      post={postsData.id}
-      text={postsData.name}
-      likeCount={postsData.likeCount}
-    />
-  ));
-
-  let newPostElement = React.createRef();
+  let state = props.store.getState();
 
   let addPost = () => {
     //props.addPost();
     //props.updatePostText(' ');
-    props.dispatch(addPostActionCreator());
+    props.store.dispatch(addPostActionCreator());
     //props.dispatch({type:'Add-Post-Text'});
   };
 
-  let onPostChange = () => {
-    let newText = newPostElement.current.value;
+  let onPostChange = (newText) => {
+    //let newText = newPostElement.current.value;
     //props.updatePostText(newText);
     //let action={type:'Add-Post-Text', newInputtedText:newText};
-    props.dispatch(AddPostTextActionCreator(newText));
+    props.store.dispatch(AddPostTextActionCreator(newText));
   };
 
   return (
-    
+    <MyPosts
+      updatePostText={onPostChange}
+      addPost={addPost}
+      posts={state.feedData.posts}
+      newPostText={state.feedData.newPostText}
+    />
   );
 };
 
-export default MyPostsContainer; 
+export default MyPostsContainer;
