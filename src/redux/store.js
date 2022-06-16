@@ -28,8 +28,9 @@ let store = {
         { message: "Taylor's message", id: 3 },
         { message: "Kate's message", id: 4 },
       ],     
+      newMessageBody:"Empty message"
     },
-    newMessageBody:"Empty message",
+    
     sidebar: {},
   },
   _callSubscriber() {
@@ -46,7 +47,6 @@ let store = {
   dispatch(action) {
     this._state.feedData = profileReducer(this._state.feedData,action);
     this._state.chatData = dialogsReducer(this._state.chatData,action);
-    
     this._state._callSubscriber(this._state);
 
   },

@@ -6,14 +6,14 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
   debugger;
   
-  //let state = props.store.getState().chatData;
+  let state = props.chatData;
   //let newMessageBody = state.newMessageBody;
 
-  let dialogElements = props.state.dialogs.map((d) => ( 
+  let dialogElements = state.dialogs.map((d) => ( 
      <Dialog_item name={d.name} id={d.id} />
   ));
 
-  let messageElements = props.state.messages.map((m) => (
+  let messageElements = state.messages.map((m) => (
     <Message message={m.message} id={m.id} />
   ));
 
@@ -34,7 +34,7 @@ const Dialogs = (props) => {
       
       <div className={s.messages}>{messageElements}</div>
       <div>
-        <textarea value={props.newMessageBody} onChange={onMessageChange} className={s.textarea} placeholder="Enter your message"></textarea>
+        <textarea value={state.newMessageBody} onChange={onMessageChange} className={s.textarea} placeholder="Enter your message"></textarea>
       </div>
       <div>
         <button onClick={addMessage} className={s.button}>send message</button>

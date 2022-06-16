@@ -14,7 +14,8 @@ let initialState = {
         { message: "Nancy's message", id: 2 },
         { message: "Taylor's message", id: 3 },
         { message: "Kate's message", id: 4 },
-      ] 
+      ],
+      newMessageBody:"Empty message"
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -31,7 +32,9 @@ const dialogsReducer = (state = initialState, action) => {
         state.newMessageBody = action.body;
         return state;
         
-    }default:
+    }
+    
+    default:
     return state;
         
     }

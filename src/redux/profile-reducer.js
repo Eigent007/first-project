@@ -3,7 +3,7 @@ const Add_Post_Text = "Add-Post-Text";
 
 let initialState = {
     posts: [
-      { id: 1, name: "firstpost", likeCount: 20 },
+      { id: 1, name: "firstpost", likeCount: 20 },  
       { id: 2, name: "secondpost", likeCount: 11 },
     ],
     newPostText: "agent 47",
